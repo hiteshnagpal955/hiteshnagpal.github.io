@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Hitesh Nagpal | Project Portfolio</title>
+  <style>
+    :root{--bg:#FFFBF3;--surface:#fff;--soft:#FFF2DA;--text:#2A2118;--muted:#705F4F;--primary:#3C2C19;--accent:#6B4B22;--border:#E9DDCB}
+    *{box-sizing:border-box} html{scroll-behavior:smooth}
+    body{margin:0;font-family:Inter,Arial,sans-serif;background:var(--bg);color:var(--text);line-height:1.6}
+    a{text-decoration:none;color:inherit}.container{width:min(1180px,calc(100% - 40px));margin:auto}
+    header{position:sticky;top:0;background:rgba(255,251,243,.96);border-bottom:1px solid var(--border);z-index:10}
+    nav{min-height:72px;display:flex;align-items:center;justify-content:space-between;gap:24px}
+    .brand{font-weight:800;color:var(--primary)} .menu{display:flex;gap:24px;font-weight:600}
+    .hero{padding:84px 0 70px;display:grid;grid-template-columns:1.1fr .9fr;gap:50px;align-items:center}
+    h1,h2,h3{color:var(--primary);line-height:1.15;margin-top:0} h1{font-size:clamp(3rem,7vw,5.5rem);letter-spacing:-.05em;margin-bottom:12px}
+    h2{font-size:clamp(2rem,4vw,3.3rem);letter-spacing:-.035em}.hero h2{font-size:clamp(1.3rem,2.5vw,2rem)}
+    .eyebrow{font-size:.78rem;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:var(--accent);margin-bottom:12px}
+    .lead{font-size:1.08rem;color:var(--muted)} .actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:26px}
+    .btn{padding:13px 20px;border-radius:12px;border:1px solid var(--primary);font-weight:750;display:inline-block}
+    .primary{background:var(--primary);color:#fff}.secondary{background:transparent;color:var(--primary)}
+    .hero-box{background:#fff;border:1px solid var(--border);border-radius:24px;padding:20px}
+    .hero-box .top{background:var(--soft);border-radius:16px;padding:20px;margin-bottom:12px}
+    .metrics{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}.metric{border:1px solid var(--border);border-radius:14px;padding:14px;background:#fff}
+    .metric b{display:block;color:var(--primary);font-size:1.2rem}.metric span{font-size:.82rem;color:var(--muted)}
+    section{padding:72px 0}.section-head{display:flex;align-items:end;justify-content:space-between;gap:28px;margin-bottom:30px}.section-head p{max-width:560px;color:var(--muted);margin:0}
+    .projects{display:grid;grid-template-columns:2fr 1fr 1fr;gap:18px}.card{background:#fff;border:1px solid var(--border);border-radius:18px;overflow:hidden}
+    .media{aspect-ratio:16/10;background:var(--soft);overflow:hidden}.media img{width:100%;height:100%;object-fit:cover}.placeholder{height:100%;display:grid;place-items:center;padding:24px;text-align:center;color:var(--accent);font-weight:800}
+    .card-body{padding:22px}.tag{font-size:.74rem;letter-spacing:.1em;text-transform:uppercase;font-weight:800;color:var(--accent)}.card h3{margin:8px 0 10px}.card p{color:var(--muted)}
+    .dark{background:var(--primary);color:#fff}.dark h2,.dark h3{color:#fff}.cap-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}.cap{padding:20px;border:1px solid rgba(255,255,255,.18);border-radius:16px}.cap p{color:#E8DDCE}
+    .impact{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:28px}.impact div{background:#fff;border:1px solid var(--border);border-radius:16px;padding:22px}.impact b{display:block;font-size:2rem;color:var(--primary)}.impact span{color:var(--muted)}
+    .about{display:grid;grid-template-columns:.8fr 1.2fr;gap:40px}.about p{color:var(--muted)}
+    footer{border-top:1px solid var(--border);padding:28px 0;color:var(--muted)}
+    @media(max-width:900px){.hero,.about{grid-template-columns:1fr}.projects{grid-template-columns:1fr 1fr}.projects .card:first-child{grid-column:1/-1}.cap-grid,.impact{grid-template-columns:1fr 1fr}.menu{display:none}}
+    @media(max-width:620px){.container{width:min(100% - 24px,1180px)}.projects,.cap-grid,.impact,.metrics{grid-template-columns:1fr}.section-head{display:block}.section-head p{margin-top:12px}}
+  </style>
+</head>
+<body>
+<header>
+  <nav class="container">
+    <a class="brand" href="#home">Hitesh Nagpal | Project Portfolio</a>
+    <div class="menu"><a href="#home">Home</a><a href="#projects">Projects</a><a href="#about">About</a><a href="#resume">Resume</a><a href="#contact">Contact</a></div>
+  </nav>
+</header>
+
+<main>
+<section id="home" class="container hero">
+  <div>
+    <div class="eyebrow">Professional Project Portfolio</div>
+    <h1>Hitesh Nagpal</h1>
+    <h2>Project Management · Business Analysis · Data Analytics · Process Improvement</h2>
+    <p class="lead">I work on projects involving structured project delivery, business analysis, data reporting, process improvement, and stakeholder collaboration. This portfolio showcases selected projects, the problems addressed, my contribution, approach, deliverables, and business value.</p>
+    <div class="actions"><a class="btn primary" href="#projects">Explore Projects</a><a class="btn secondary" href="#resume">View Resume</a></div>
+  </div>
+  <div class="hero-box">
+    <div class="top"><strong>What this portfolio shows</strong><br>Real project work presented as concise, recruiter-friendly case studies.</div>
+    <div class="metrics">
+      <div class="metric"><b>Problem</b><span>Business context and objective</span></div>
+      <div class="metric"><b>Work</b><span>My role, approach and deliverables</span></div>
+      <div class="metric"><b>Value</b><span>Results, insight and business impact</span></div>
+    </div>
+  </div>
+</section>
+
+<section id="projects">
+  <div class="container">
+    <div class="section-head"><div><div class="eyebrow">Selected work</div><h2>Featured Projects</h2></div><p>Projects across strategic reporting, analytics, business analysis, project delivery, and process improvement.</p></div>
+    <div class="projects">
+      <article class="card">
+        <div class="media"><img src="pmi-dashboard.jpeg" alt="PMI Manitoba membership and engagement analytics dashboard"></div>
+        <div class="card-body"><div class="tag">Data Analytics · Strategic Reporting</div><h3>PMI Manitoba Membership & Engagement Analytics</h3><p>Developed an executive-level dashboard consolidating membership, certification, industry, and digital-engagement metrics to support AGM and strategic-planning discussions.</p></div>
+      </article>
+      <article class="card"><div class="media"><div class="placeholder">Add your next project visual</div></div><div class="card-body"><div class="tag">Process Improvement</div><h3>Project 02</h3><p>Add a strong project that demonstrates process improvement, operational analysis, or measurable change.</p></div></article>
+      <article class="card"><div class="media"><div class="placeholder">Add another project visual</div></div><div class="card-body"><div class="tag">Project Delivery</div><h3>Project 03</h3><p>Add a project that demonstrates planning, execution, stakeholder coordination, or delivery ownership.</p></div></article>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="container">
+    <div class="section-head"><div><div class="eyebrow">Case study</div><h2>PMI Manitoba Analytics Dashboard</h2></div><p>Annual General Meeting and strategic-planning decision support.</p></div>
+    <div class="about">
+      <div><h3>Business Problem</h3><p>Leadership needed a consolidated understanding of the chapter's current position across active membership, certifications, industry representation, and digital engagement before strategic-planning discussions.</p></div>
+      <div><h3>Business Value</h3><p>The dashboard brought fragmented organizational metrics into one executive view, helping leadership evaluate membership composition, certification representation, industry reach, and communication-channel presence when considering future priorities.</p></div>
+    </div>
+    <div class="impact"><div><b>1,713</b><span>Active members</span></div><div><b>1,188</b><span>Certified members</span></div><div><b>525</b><span>Non-certified members</span></div><div><b>4+</b><span>Engagement channels</span></div></div>
+  </div>
+</section>
+
+<section class="dark">
+  <div class="container">
+    <div class="section-head"><div><div class="eyebrow" style="color:#E8DDCE">Capabilities</div><h2>Areas of Experience</h2></div></div>
+    <div class="cap-grid">
+      <div class="cap"><h3>Project Management</h3><p>Planning, coordination, stakeholder communication, risk tracking, status reporting, and delivery support.</p></div>
+      <div class="cap"><h3>Business Analysis</h3><p>Requirements, process analysis, problem definition, KPI development, and decision support.</p></div>
+      <div class="cap"><h3>Data & Reporting</h3><p>Data validation, dashboards, visualization, performance reporting, and management insights.</p></div>
+      <div class="cap"><h3>Process Improvement</h3><p>Current-state analysis, gap identification, root-cause thinking, recommendations, and implementation support.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="about"><div class="container about"><div><div class="eyebrow">About</div><h2>Practical project work, clearly presented.</h2></div><div><p>I work across project management, business analysis, data reporting, process improvement, and stakeholder coordination. My focus is on understanding business problems, structuring information, and translating project work into practical deliverables that support better decisions and outcomes.</p></div></div></section>
+
+<section id="resume"><div class="container"><div class="eyebrow">Resume</div><h2>Professional Background</h2><p class="lead">Add your résumé PDF here later so recruiters can access it quickly.</p></div></section>
+
+<section id="contact"><div class="container"><div class="eyebrow">Contact</div><h2>Let's Connect</h2><p class="lead">Interested in discussing my experience or one of the projects in this portfolio? Add your email and LinkedIn links here.</p></div></section>
+</main>
+
+<footer><div class="container">© 2026 Hitesh Nagpal · Project Portfolio</div></footer>
+</body>
+</html>
