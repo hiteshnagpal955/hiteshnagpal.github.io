@@ -4,10 +4,11 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Hitesh Nagpal | Project Portfolio</title>
+<meta name="description" content="Hitesh Nagpal professional project portfolio">
 <style>
 :root{
-  --bg:#FFFBF3;--surface:#FFFFFF;--soft:#FFF2DA;--text:#2A2118;
-  --muted:#705F4F;--primary:#3C2C19;--accent:#6B4B22;--border:#E9DDCB;
+  --bg:#FFFBF3; --surface:#FFFFFF; --soft:#FFF2DA; --text:#2A2118;
+  --muted:#705F4F; --primary:#3C2C19; --accent:#6B4B22; --border:#E9DDCB;
 }
 *{box-sizing:border-box}
 html{scroll-behavior:smooth}
@@ -22,8 +23,8 @@ nav{min-height:72px;display:flex;justify-content:space-between;align-items:cente
 .menu a:hover{color:var(--accent)}
 .hero{padding:84px 0 70px;display:grid;grid-template-columns:1.1fr .9fr;gap:50px;align-items:center}
 h1,h2,h3,h4{color:var(--primary);line-height:1.15;margin-top:0}
-h1{font-size:clamp(3rem,7vw,5.5rem);letter-spacing:-.05em;margin-bottom:12px}
-h2{font-size:clamp(2rem,4vw,3.3rem);letter-spacing:-.035em}
+h1{font-size:clamp(3rem,7vw,5.4rem);letter-spacing:-.05em;margin-bottom:12px}
+h2{font-size:clamp(2rem,4vw,3.2rem);letter-spacing:-.035em}
 .hero h2{font-size:clamp(1.3rem,2.5vw,2rem)}
 .eyebrow{font-size:.78rem;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:var(--accent);margin-bottom:12px}
 .lead{font-size:1.08rem;color:var(--muted)}
@@ -35,7 +36,7 @@ h2{font-size:clamp(2rem,4vw,3.3rem);letter-spacing:-.035em}
 .hero-box .top{background:var(--soft);border-radius:16px;padding:20px;margin-bottom:12px}
 .metrics{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
 .metric{border:1px solid var(--border);border-radius:14px;padding:14px;background:#fff}
-.metric b{display:block;color:var(--primary);font-size:1.2rem}
+.metric b{display:block;color:var(--primary);font-size:1.15rem}
 .metric span{font-size:.82rem;color:var(--muted)}
 section{padding:72px 0}
 .section-head{display:flex;align-items:end;justify-content:space-between;gap:28px;margin-bottom:30px}
@@ -88,6 +89,33 @@ footer{border-top:1px solid var(--border);padding:28px 0;color:var(--muted)}
 .impact span{color:var(--muted)}
 .note{font-size:.92rem;color:var(--muted);border-left:3px solid var(--accent);padding-left:16px}
 
+/* Privacy-first assistant */
+.chat-launcher{
+  position:fixed;right:22px;bottom:22px;z-index:60;border:0;border-radius:999px;padding:14px 18px;
+  background:var(--primary);color:#fff;font-weight:800;box-shadow:0 12px 30px rgba(60,44,25,.22);cursor:pointer
+}
+.chat-panel{
+  position:fixed;right:22px;bottom:82px;z-index:59;width:min(390px,calc(100% - 24px));max-height:72vh;
+  background:var(--surface);border:1px solid var(--border);border-radius:18px;box-shadow:0 18px 50px rgba(60,44,25,.18);
+  display:none;overflow:hidden
+}
+.chat-panel.open{display:flex;flex-direction:column}
+.chat-head{display:flex;justify-content:space-between;gap:16px;align-items:flex-start;padding:16px 16px 12px;background:var(--soft);border-bottom:1px solid var(--border)}
+.chat-title{font-weight:850;color:var(--primary)}
+.chat-sub{font-size:.79rem;color:var(--muted);margin-top:3px}
+.chat-close{border:1px solid var(--border);background:#fff;color:var(--primary);width:38px;height:38px;border-radius:10px;font-size:20px;cursor:pointer}
+.chat-privacy{font-size:.76rem;line-height:1.4;color:var(--muted);padding:10px 14px;border-bottom:1px solid var(--border);background:#fff}
+.chat-messages{padding:14px;display:flex;flex-direction:column;gap:10px;overflow:auto;min-height:220px}
+.chat-msg{max-width:88%;padding:10px 12px;border-radius:13px;font-size:.92rem;white-space:pre-wrap}
+.chat-msg.bot{align-self:flex-start;background:var(--soft);color:var(--text)}
+.chat-msg.user{align-self:flex-end;background:var(--primary);color:#fff}
+.chat-chips{padding:0 14px 10px;display:flex;gap:8px;flex-wrap:wrap}
+.chat-chip{border:1px solid var(--border);background:#fff;color:var(--primary);border-radius:999px;padding:7px 10px;font-size:.78rem;font-weight:700;cursor:pointer}
+.chat-form{padding:12px;border-top:1px solid var(--border);display:flex;gap:8px;background:#fff}
+.chat-input{min-width:0;flex:1;border:1px solid var(--border);border-radius:10px;padding:11px 12px;font:inherit;color:var(--text);background:#fff}
+.chat-send{border:0;border-radius:10px;padding:0 14px;background:var(--primary);color:#fff;font-weight:800;cursor:pointer}
+.chat-launcher:focus,.chat-close:focus,.chat-send:focus,.chat-chip:focus,.chat-input:focus{outline:3px solid rgba(107,75,34,.26);outline-offset:2px}
+
 @media(max-width:900px){
   .hero,.about,.project-grid{grid-template-columns:1fr}
   .projects{grid-template-columns:1fr 1fr}
@@ -101,6 +129,8 @@ footer{border-top:1px solid var(--border);padding:28px 0;color:var(--muted)}
   .section-head{display:block}
   .section-head p{margin-top:12px}
   .hero{padding-top:48px}
+  .chat-launcher{right:12px;bottom:12px}
+  .chat-panel{right:12px;bottom:72px;width:calc(100% - 24px);max-height:74vh}
 }
 </style>
 </head>
@@ -109,104 +139,229 @@ footer{border-top:1px solid var(--border);padding:28px 0;color:var(--muted)}
 <nav class="container">
 <a class="brand" href="index.html">Hitesh Nagpal | Project Portfolio</a>
 <div class="menu">
-<a href="#home">Home</a>
-<a href="#projects">Projects</a>
-<a href="#about">About</a>
-<a href="#resume">Resume</a>
-<a href="#contact">Contact</a>
+<a href="index.html">Home</a>
+<a href="index.html#projects">Projects</a>
+<a href="index.html#about">About</a>
+<a href="index.html#resume">Resume</a>
+<a href="index.html#contact">Contact</a>
 </div>
 </nav>
 </header>
 
 <main>
 <section id="home" class="container hero">
-<div>
-<div class="eyebrow">Professional Project Portfolio</div>
-<h1>Hitesh Nagpal</h1>
-<h2>Project Management · Business Analysis · Data Analytics · Process Improvement</h2>
-<p class="lead">I work on projects involving structured project delivery, business analysis, data reporting, process improvement, and stakeholder collaboration. This portfolio showcases selected projects, the problems addressed, my contribution, approach, deliverables, and business value.</p>
-<div class="actions">
-<a class="btn primary" href="#projects">Explore Projects</a>
-<a class="btn secondary" href="#resume">View Resume</a>
-</div>
-</div>
-<div class="hero-box">
-<div class="top"><strong>What this portfolio shows</strong><br>Real project work presented as concise, recruiter-friendly case studies.</div>
-<div class="metrics">
-<div class="metric"><b>Problem</b><span>Business context and objective</span></div>
-<div class="metric"><b>Work</b><span>My role, approach and deliverables</span></div>
-<div class="metric"><b>Value</b><span>Results, insight and business impact</span></div>
-</div>
-</div>
+  <div>
+    <div class="eyebrow">Professional Project Portfolio</div>
+    <h1>Hitesh Nagpal</h1>
+    <h2>Project Management · Business Analysis · Data Analytics · Process Improvement</h2>
+    <p class="lead">I work on projects involving structured project delivery, business analysis, data reporting, process improvement, and stakeholder collaboration. This portfolio showcases selected projects, the problems addressed, my contribution, approach, deliverables, and business value.</p>
+    <div class="actions">
+      <a class="btn primary" href="#projects">Explore Projects</a>
+      <a class="btn secondary" href="#resume">View Resume</a>
+    </div>
+  </div>
+  <div class="hero-box">
+    <div class="top"><strong>What this portfolio shows</strong><br>Real project work presented as concise, recruiter-friendly case studies.</div>
+    <div class="metrics">
+      <div class="metric"><b>Problem</b><span>Business context and objective</span></div>
+      <div class="metric"><b>Work</b><span>My role, approach and deliverables</span></div>
+      <div class="metric"><b>Value</b><span>Results, insight and business impact</span></div>
+    </div>
+  </div>
 </section>
 
 <section id="projects">
-<div class="container">
-<div class="section-head">
-<div><div class="eyebrow">Selected Work</div><h2>Featured Projects</h2></div>
-<p>Selected projects demonstrating project delivery, business analysis, analytics, and process improvement.</p>
-</div>
-
-<div class="projects">
-<article class="card">
-<a class="card-link-wrap" href="pmi-membership-analytics.html">
-<div class="media"><img src="pmi-dashboard.jpeg" alt="PMI Manitoba chapter statistics dashboard"></div>
-<div class="card-body">
-<div class="tag">Data Analytics · Strategic Reporting</div>
-<h3>PMI Manitoba Membership & Engagement Analytics</h3>
-<p>Executive-level current-state analysis covering membership, certification, industry representation, and digital reach.</p>
-<span class="card-cta">View Case Study →</span>
-</div>
-</a>
-</article>
-
-<article class="card">
-<a class="card-link-wrap" href="poy-voting-platform.html">
-<div class="media"><img src="poy-2026-voting-platform.png" alt="PMI Manitoba 2026 Project of the Year voting platform"></div>
-<div class="card-body">
-<div class="tag">Business Analysis · Requirements · Testing</div>
-<h3>PMI Manitoba 2026 Project of the Year Voting Platform</h3>
-<p>Translated stakeholder requirements into a member-gated voting workflow and validated the end-to-end experience.</p>
-<span class="card-cta">View Case Study →</span>
-</div>
-</a>
-</article>
-
-<article class="card">
-<div class="media"><div class="placeholder">Add another project visual</div></div>
-<div class="card-body">
-<div class="tag">Project Delivery</div>
-<h3>Project 03</h3>
-<p>Add a project that demonstrates planning, execution, stakeholder coordination, or delivery ownership.</p>
-</div>
-</article>
-</div>
-</div>
+  <div class="container">
+    <div class="section-head">
+      <div><div class="eyebrow">Selected Work</div><h2>Featured Projects</h2></div>
+      <p>Selected projects demonstrating project delivery, business analysis, analytics, and process improvement.</p>
+    </div>
+    <div class="projects">
+      <article class="card">
+        <a class="card-link-wrap" href="pmi-membership-analytics.html">
+          <div class="media"><img src="pmi-dashboard.jpeg" alt="PMI Manitoba chapter statistics dashboard"></div>
+          <div class="card-body">
+            <div class="tag">Data Analytics · Strategic Reporting</div>
+            <h3>PMI Manitoba Membership & Engagement Analytics</h3>
+            <p>Executive-level current-state analysis covering membership, certification, industry representation, and digital reach.</p>
+            <span class="card-cta">View Case Study →</span>
+          </div>
+        </a>
+      </article>
+      <article class="card">
+        <a class="card-link-wrap" href="poy-voting-platform.html">
+          <div class="media"><img src="poy-voting-platform.png" alt="PMI Manitoba 2026 Project of the Year voting platform"></div>
+          <div class="card-body">
+            <div class="tag">Business Analysis · Requirements · Testing</div>
+            <h3>PMI Manitoba 2026 Project of the Year Voting Platform</h3>
+            <p>Translated stakeholder requirements into a member-gated voting workflow and validated the end-to-end experience.</p>
+            <span class="card-cta">View Case Study →</span>
+          </div>
+        </a>
+      </article>
+      <article class="card">
+        <div class="media"><div class="placeholder">Add another project visual</div></div>
+        <div class="card-body">
+          <div class="tag">Project Delivery</div>
+          <h3>Project 03</h3>
+          <p>Add a project that demonstrates planning, execution, stakeholder coordination, or delivery ownership.</p>
+        </div>
+      </article>
+    </div>
+  </div>
 </section>
 
 <section class="dark">
-<div class="container">
-<div class="section-head"><div><div class="eyebrow" style="color:#E8DDCE">Capabilities</div><h2>Areas of Experience</h2></div></div>
-<div class="cap-grid">
-<div class="cap"><h3>Project Management</h3><p>Planning, coordination, stakeholder communication, risk tracking, status reporting, and delivery support.</p></div>
-<div class="cap"><h3>Business Analysis</h3><p>Requirements, process analysis, problem definition, KPI development, and decision support.</p></div>
-<div class="cap"><h3>Data & Reporting</h3><p>Data validation, dashboards, visualization, performance reporting, and management insights.</p></div>
-<div class="cap"><h3>Process Improvement</h3><p>Current-state analysis, gap identification, root-cause thinking, recommendations, and implementation support.</p></div>
-</div>
-</div>
+  <div class="container">
+    <div class="section-head"><div><div class="eyebrow" style="color:#E8DDCE">Capabilities</div><h2>Areas of Experience</h2></div></div>
+    <div class="cap-grid">
+      <div class="cap"><h3>Project Management</h3><p>Planning, coordination, stakeholder communication, risk tracking, status reporting, and delivery support.</p></div>
+      <div class="cap"><h3>Business Analysis</h3><p>Requirements, process analysis, problem definition, KPI development, and decision support.</p></div>
+      <div class="cap"><h3>Data & Reporting</h3><p>Data validation, dashboards, visualization, performance reporting, and management insights.</p></div>
+      <div class="cap"><h3>Process Improvement</h3><p>Current-state analysis, gap identification, root-cause thinking, recommendations, and implementation support.</p></div>
+    </div>
+  </div>
 </section>
 
 <section id="about">
-<div class="container about">
-<div><div class="eyebrow">About</div><h2>Practical project work, clearly presented.</h2></div>
-<div><p>I work across project management, business analysis, data reporting, process improvement, and stakeholder coordination. My focus is on understanding business problems, structuring information, and translating project work into practical deliverables that support better decisions and outcomes.</p></div>
-</div>
+  <div class="container about">
+    <div><div class="eyebrow">About</div><h2>Practical project work, clearly presented.</h2></div>
+    <div><p>I work across project management, business analysis, data reporting, process improvement, and stakeholder coordination. My focus is on understanding business problems, structuring information, and translating project work into practical deliverables that support better decisions and outcomes.</p></div>
+  </div>
 </section>
 
-<section id="resume"><div class="container"><div class="eyebrow">Resume</div><h2>Professional Background</h2><p class="lead">Add your résumé PDF here later so recruiters can access it quickly.</p></div></section>
-<section id="contact"><div class="container"><div class="eyebrow">Contact</div><h2>Let's Connect</h2><p class="lead">Interested in discussing my experience or one of the projects in this portfolio? Add your email and LinkedIn links here.</p></div></section>
+<section id="resume"><div class="container"><div class="eyebrow">Resume</div><h2>Professional Background</h2><p class="lead">A résumé link can be added here once the final PDF is ready.</p></div></section>
+<section id="contact"><div class="container"><div class="eyebrow">Contact</div><h2>Let's Connect</h2><p class="lead">Professional email and LinkedIn links can be added here before final publication.</p></div></section>
 </main>
 
 <footer><div class="container">© 2026 Hitesh Nagpal · Project Portfolio</div></footer>
+
+<button class="chat-launcher" id="portfolioChatLauncher" type="button" aria-controls="portfolioChatPanel" aria-expanded="false">💬 Ask about my projects</button>
+<section class="chat-panel" id="portfolioChatPanel" aria-label="Hitesh portfolio assistant">
+  <div class="chat-head">
+    <div>
+      <div class="chat-title">Hitesh's Portfolio Assistant</div>
+      <div class="chat-sub">Projects, skills, tools, and professional experience</div>
+    </div>
+    <button class="chat-close" id="portfolioChatClose" type="button" aria-label="Close portfolio assistant">×</button>
+  </div>
+  <div class="chat-privacy">Privacy-first mode: questions stay in your browser. This assistant does not send, save, or track messages.</div>
+  <div class="chat-messages" id="portfolioChatMessages" aria-live="polite"></div>
+  <div class="chat-chips" aria-label="Suggested questions">
+    <button class="chat-chip" type="button">What projects show business analysis?</button>
+    <button class="chat-chip" type="button">What data analytics work has Hitesh done?</button>
+    <button class="chat-chip" type="button">Tell me about the voting platform.</button>
+    <button class="chat-chip" type="button">What skills are demonstrated?</button>
+  </div>
+  <form class="chat-form" id="portfolioChatForm">
+    <input class="chat-input" id="portfolioChatInput" type="text" maxlength="300" placeholder="Ask about Hitesh's portfolio…" aria-label="Ask about Hitesh's portfolio">
+    <button class="chat-send" type="submit">Send</button>
+  </form>
+</section>
+
+
+<script>
+(() => {
+  const launcher = document.getElementById('portfolioChatLauncher');
+  const panel = document.getElementById('portfolioChatPanel');
+  const closeBtn = document.getElementById('portfolioChatClose');
+  const form = document.getElementById('portfolioChatForm');
+  const input = document.getElementById('portfolioChatInput');
+  const messages = document.getElementById('portfolioChatMessages');
+  const chips = Array.from(document.querySelectorAll('.chat-chip'));
+  if (!launcher || !panel || !form || !input || !messages) return;
+
+  const knowledge = [
+    {tags:['business analysis','requirements','requirement','user story','use case','stakeholder','voting','login','authentication','access control'],
+     answer:"The 2026 PMI Manitoba Project of the Year Voting Platform demonstrates Hitesh's business analysis work. He gathered requirements from the Project of the Year Chairperson and PMI Manitoba VP, translated them into functional requirements, use cases and user stories, defined the member-login and access workflow, configured the voting page, integrated Google Forms, and tested authenticated and unauthenticated scenarios."},
+    {tags:['data analytics','analytics','dashboard','reporting','membership','certification','industry','social media','strategic planning','agm'],
+     answer:"The PMI Manitoba Membership & Engagement Analytics project demonstrates data analysis and executive reporting. Hitesh consolidated membership, certification, industry, and digital-engagement information into a current-state dashboard to support AGM and strategic-planning discussions."},
+    {tags:['voting platform','poy','project of the year','google form','google forms','voting'],
+     answer:"For the 2026 Project of the Year initiative, Hitesh worked with PMI Manitoba stakeholders to build a member-gated voting experience. Visitors who were not logged in were redirected to the login process, while authenticated members could access the voting page. The voting form was embedded using Google Forms, and the workflow was functionally tested and validated."},
+    {tags:['skills','capabilities','experience','strengths'],
+     answer:"The portfolio currently demonstrates project management, business analysis, requirements gathering, stakeholder collaboration, data analytics, dashboard reporting, process improvement, user-story and use-case development, access-flow design, functional testing, and executive communication."},
+    {tags:['stakeholder','stakeholders','communication','vp','chairperson'],
+     answer:"The Project of the Year Voting Platform shows stakeholder collaboration clearly. Hitesh worked with the Project of the Year Chairperson and PMI Manitoba VP to capture requirements, translate them into system behavior, implement the solution, and validate the result."},
+    {tags:['testing','test','qa','validation','verify','verification'],
+     answer:"In the voting-platform project, Hitesh tested both authenticated and unauthenticated user paths. He verified login redirection for users who were not signed in, confirmed access after successful authentication, and checked that the embedded Google Form supported the intended voting workflow."},
+    {tags:['tools','technology','technologies','software','google forms','internal tool'],
+     answer:"The projects currently shown use tools and methods including Google Forms, an internal website platform, dashboard and reporting techniques, requirements documentation, user stories, use cases, functional testing, and stakeholder validation. The portfolio should only list additional tools when they are supported by Hitesh's actual project work."},
+    {tags:['impact','business value','value','result','results','outcome','outcomes'],
+     answer:"The portfolio uses defensible business value rather than exaggerated claims. The analytics dashboard gave leadership a consolidated current-state baseline for planning discussions. The voting-platform project translated stakeholder requirements into a working member-access workflow and digital voting experience."},
+    {tags:['pmi','pmi manitoba','projects'],
+     answer:"Two featured PMI Manitoba projects are currently documented: the Membership & Engagement Analytics Dashboard for AGM and strategic planning, and the 2026 Project of the Year Voting Platform covering requirements, member access, Google Forms integration, and testing."},
+    {tags:['privacy','private','tracking','store','stored','save','saved'],
+     answer:"This portfolio assistant runs entirely in your browser. It does not send questions to an external AI service, does not use cookies or browser storage, and does not save or track what you type."}
+  ];
+
+  const fallback = "I can answer questions about Hitesh's published projects, skills, tools, business-analysis work, analytics experience, stakeholder collaboration, and testing. I don't have enough published information to answer that question accurately, so I won't guess.";
+
+  function addMessage(text, type){
+    const div=document.createElement('div');
+    div.className='chat-msg '+type;
+    div.textContent=text;
+    messages.appendChild(div);
+    messages.scrollTop=messages.scrollHeight;
+  }
+
+  function normalize(s){
+    return (s||'').toLowerCase().replace(/[^a-z0-9\s]/g,' ').replace(/\s+/g,' ').trim();
+  }
+
+  function answerQuestion(question){
+    const q=normalize(question);
+    if(!q) return "Please enter a question about Hitesh's portfolio.";
+    let best=null,bestScore=0;
+    for(const item of knowledge){
+      let score=0;
+      for(const tag of item.tags){
+        const t=normalize(tag);
+        if(q.includes(t)) score += Math.max(2,t.split(' ').length*2);
+        else{
+          for(const w of t.split(' ')){
+            if(w.length>3 && q.includes(w)) score += 1;
+          }
+        }
+      }
+      if(score>bestScore){bestScore=score;best=item;}
+    }
+    return bestScore>=2 ? best.answer : fallback;
+  }
+
+  function submitQuestion(question){
+    const clean=(question||'').trim().slice(0,300);
+    if(!clean) return;
+    addMessage(clean,'user');
+    input.value='';
+    window.setTimeout(()=>addMessage(answerQuestion(clean),'bot'),100);
+  }
+
+  launcher.addEventListener('click',()=>{
+    const opening=!panel.classList.contains('open');
+    panel.classList.toggle('open',opening);
+    launcher.setAttribute('aria-expanded',String(opening));
+    if(opening){
+      if(!messages.children.length){
+        addMessage("Hi. I can answer questions about Hitesh's published projects and professional experience. I only use information included in this portfolio, and I won't invent missing details.",'bot');
+      }
+      input.focus();
+    }
+  });
+
+  closeBtn.addEventListener('click',()=>{
+    panel.classList.remove('open');
+    launcher.setAttribute('aria-expanded','false');
+    launcher.focus();
+  });
+
+  form.addEventListener('submit',e=>{
+    e.preventDefault();
+    submitQuestion(input.value);
+  });
+
+  chips.forEach(btn=>btn.addEventListener('click',()=>submitQuestion(btn.textContent)));
+})();
+</script>
+
 </body>
 </html>
