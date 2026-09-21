@@ -144,6 +144,37 @@ footer{border-top:1px solid var(--border);padding:28px 0;color:var(--muted)}
   .chat-launcher{right:12px;bottom:12px}
   .chat-panel{right:12px;bottom:72px;width:calc(100% - 24px);max-height:76vh}
 }
+
+/* Loblaw project visual */
+.loblaw-visual{
+  height:100%;min-height:210px;padding:20px;
+  background:linear-gradient(180deg,#ffffff 0%,#f8f7f3 100%);
+  display:flex;flex-direction:column;justify-content:space-between;gap:16px
+}
+.loblaw-visual-head{display:flex;justify-content:space-between;gap:14px;align-items:flex-start}
+.loblaw-visual-title{font-weight:850;color:var(--primary);font-size:1.02rem}
+.loblaw-visual-sub{font-size:.75rem;color:var(--muted);margin-top:2px}
+.loblaw-badge{font-size:.7rem;font-weight:800;border:1px solid var(--border);border-radius:999px;padding:5px 8px;color:var(--accent);white-space:nowrap}
+.loblaw-kpis{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.loblaw-kpi{border:1px solid var(--border);background:#fff;border-radius:12px;padding:12px}
+.loblaw-kpi b{display:block;font-size:1.35rem;color:var(--primary);line-height:1.1}
+.loblaw-kpi span{font-size:.72rem;color:var(--muted)}
+.progress-line{height:8px;border-radius:99px;background:#eee8dd;overflow:hidden;margin-top:8px}
+.progress-fill{height:100%;width:98%;background:var(--accent);border-radius:99px}
+.loblaw-mini-flow{display:flex;align-items:center;gap:6px;flex-wrap:wrap;font-size:.68rem;font-weight:700;color:var(--muted)}
+.loblaw-mini-flow i{font-style:normal;color:var(--accent)}
+.project-summary-visual{border:1px solid var(--border);background:#fff;border-radius:20px;padding:26px;margin:32px 0 42px}
+.project-summary-top{display:flex;justify-content:space-between;gap:20px;align-items:flex-start;margin-bottom:22px}
+.project-summary-top p{margin:6px 0 0;color:var(--muted)}
+.project-summary-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
+.project-summary-kpi{background:var(--soft);border:1px solid var(--border);border-radius:14px;padding:18px}
+.project-summary-kpi b{display:block;font-size:1.65rem;color:var(--primary)}
+.project-summary-kpi span{font-size:.82rem;color:var(--muted)}
+.project-summary-foot{margin-top:16px;font-size:.78rem;color:var(--muted)}
+.chat-contact-cta{display:inline-block;margin-top:9px;font-weight:800;color:var(--accent)!important}
+@media(max-width:700px){.project-summary-grid{grid-template-columns:1fr 1fr}}
+@media(max-width:430px){.project-summary-grid{grid-template-columns:1fr}}
+
 </style>
 </head>
 <body>
@@ -221,7 +252,7 @@ footer{border-top:1px solid var(--border);padding:28px 0;color:var(--muted)}
   <div class="chat-chips" aria-label="Suggested questions">
     <button class="chat-chip" type="button">What business analysis experience does Hitesh have?</button>
     <button class="chat-chip" type="button">What tools has he used?</button>
-    <button class="chat-chip" type="button">Tell me about his Loblaw experience.</button>
+    <button class="chat-chip" type="button">Tell me about the Loblaw project.</button>
     <button class="chat-chip" type="button">What certifications does he have?</button>
   </div>
   <form class="chat-form" id="portfolioChatForm">
@@ -229,8 +260,6 @@ footer{border-top:1px solid var(--border);padding:28px 0;color:var(--muted)}
     <button class="chat-send" type="submit">Send</button>
   </form>
 </section>
-
-
 <script>
 (() => {
   const launcher = document.getElementById('portfolioChatLauncher');
@@ -268,6 +297,18 @@ footer{border-top:1px solid var(--border);padding:28px 0;color:var(--muted)}
         testing:"Hitesh verified that logged-out visitors were redirected to login, authenticated members could access the page, and the embedded Google Form loaded and supported the intended voting workflow.",
         value:"The project translated stakeholder requirements into a working member-access flow and digital voting experience within the existing chapter website.",
         link:"poy-voting-platform.html"
+      },
+      loblaw: {
+        name:"Loblaw ERP/POS Training Readiness Initiative",
+        aliases:["loblaw project","loblaw","erp pos","erp","pos","training readiness","implementation readiness","rollout readiness","training compliance"],
+        overview:"At Loblaw Companies Limited, Hitesh supported a national ERP/POS training-readiness initiative as a Business Analyst Intern. The work focused on training completion, UAT activity, rollout issues, stakeholder reporting, and implementation readiness.",
+        problem:"The implementation team needed visibility into whether users and store groups were ready for the ERP/POS rollout. Training completion, UAT activity, rollout issues, and follow-up actions had to be monitored so gaps could be addressed before launch.",
+        contribution:"Hitesh tracked role-based training completion, UAT activities, and rollout issues across store groups using Excel and Power BI. He analyzed readiness data, created status reporting for stakeholders, clarified process issues, captured feedback, and supported follow-up actions.",
+        tools:"The project used Excel and Power BI for readiness tracking and stakeholder reporting, supported by UAT tracking, issue follow-up, process clarification, feedback capture, and implementation-readiness coordination.",
+        testing:"Hitesh supported UAT tracking and monitored rollout issues as part of implementation readiness. The published portfolio does not claim ownership of the entire testing program.",
+        value:"The readiness work helped stakeholders identify gaps and follow up before launch, contributing to 98% training compliance before launch across a program involving more than 1,000 users.",
+        metrics:"The resume-supported figures published for this project are more than 1,000 users in the readiness initiative and 98% training compliance before launch.",
+        link:"loblaw-erp-pos-readiness.html"
       }
     },
 
@@ -366,13 +407,29 @@ footer{border-top:1px solid var(--border);padding:28px 0;color:var(--muted)}
     return best ? {type:bestType,id:best} : null;
   }
 
-  function addMessage(text,type,link){
+  function addMessage(text,type,link,showContact=true){
     const div=document.createElement("div");
     div.className="chat-msg "+type;
     const t=document.createElement("div"); t.textContent=text; div.appendChild(t);
+
     if(link && type==="bot"){
-      const a=document.createElement("a");a.href=link;a.textContent="View full case study →";a.style.display="inline-block";a.style.marginTop="8px";div.appendChild(a);
+      const a=document.createElement("a");
+      a.href=link;
+      a.textContent=link.toLowerCase().includes("resume") ? "View resume →" : "View related case study →";
+      a.style.display="inline-block";
+      a.style.marginTop="8px";
+      div.appendChild(a);
     }
+
+    if(type==="bot" && showContact){
+      const contact=document.createElement("a");
+      contact.href="index.html#contact";
+      contact.className="chat-contact-cta";
+      contact.textContent="For additional information, contact Hitesh →";
+      div.appendChild(document.createElement("br"));
+      div.appendChild(contact);
+    }
+
     messages.appendChild(div); messages.scrollTop=messages.scrollHeight;
   }
 
@@ -420,7 +477,7 @@ footer{border-top:1px solid var(--border);padding:28px 0;color:var(--muted)}
       return {text:"Hitesh's experience includes SDLC and project delivery support, stakeholder engagement, requirements clarification, UAT, status reporting, implementation-readiness work, and structured delivery of project outputs."};
     }
     if(q.includes("compare")||q.includes("difference between")||q.includes("which project")){
-      return {text:"The Membership & Engagement Analytics project emphasizes data analysis, KPI reporting, visualization, and executive decision support. The Project of the Year Voting Platform emphasizes requirements gathering, user stories, stakeholder collaboration, access-flow design, implementation, and functional testing."};
+      return {text:"The Membership & Engagement Analytics project emphasizes data analysis, KPI reporting, visualization, and executive decision support. The Project of the Year Voting Platform emphasizes requirements gathering, user stories, stakeholder collaboration, access-flow design, implementation, and functional testing. The Loblaw ERP/POS Training Readiness project emphasizes UAT tracking, training readiness, stakeholder reporting, gap follow-up, and implementation support."};
     }
 
     return {text:"I can answer questions about Hitesh's projects, work experience, tools, business-analysis background, analytics work, certifications, education, resume, and public contact information. I don't have enough published information to answer that question accurately, so I won't guess."};
@@ -439,7 +496,7 @@ footer{border-top:1px solid var(--border);padding:28px 0;color:var(--muted)}
     launcher.setAttribute("aria-expanded",String(opening));
     if(opening){
       if(!messages.children.length){
-        addMessage("Hi. Ask me about Hitesh's projects, professional experience, tools, certifications, education, or contact information. I can follow the current conversation while this page stays open, but I don't save it.","bot");
+        addMessage("Hi. Ask me about Hitesh's projects, professional experience, tools, certifications, education, resume, or contact information. I can follow the current conversation while this page stays open, but I don't save it.","bot",null,false);
       }
       input.focus();
     }
@@ -448,6 +505,20 @@ footer{border-top:1px solid var(--border);padding:28px 0;color:var(--muted)}
   closeBtn.addEventListener("click",()=>{panel.classList.remove("open");launcher.setAttribute("aria-expanded","false");launcher.focus();});
   form.addEventListener("submit",e=>{e.preventDefault();submitQuestion(input.value);});
   chips.forEach(btn=>btn.addEventListener("click",()=>submitQuestion(btn.textContent)));
+})();
+</script>
+
+
+<script src="analytics-config.js"></script>
+<script>
+(() => {
+  const token = (window.PORTFOLIO_ANALYTICS_TOKEN || "").trim();
+  if (!token || token === "PASTE_CLOUDFLARE_SITE_TOKEN_HERE") return;
+  const s = document.createElement("script");
+  s.type = "module";
+  s.src = "https://static.cloudflareinsights.com/beacon.min.js";
+  s.setAttribute("data-cf-beacon", JSON.stringify({token}));
+  document.head.appendChild(s);
 })();
 </script>
 
